@@ -21,3 +21,33 @@ variable "aws_region" {
   type        = string
   default     = "eu-west-2"
 }
+
+variable "vpc_cidr" {
+  description = "CIDR block for HM Group VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "availability_zones" {
+  description = "Availability Zones for high availability"
+  type        = list(string)
+  default     = ["eu-west-2a", "eu-west-2b"]
+}
+
+variable "public_subnet_cidrs" {
+  description = "Public subnet CIDR blocks"
+  type        = list(string)
+  default     = ["10.0.0.0/24", "10.0.1.0/24"]
+}
+
+variable "private_app_subnet_cidrs" {
+  description = "Private app subnet CIDR blocks"
+  type        = list(string)
+  default     = ["10.0.2.0/24", "10.0.3.0/24"]
+}
+
+variable "private_db_subnet_cidrs" {
+  description = "Private database subnet CIDR blocks"
+  type        = list(string)
+  default     = ["10.0.4.0/24", "10.0.5.0/24"]
+}
