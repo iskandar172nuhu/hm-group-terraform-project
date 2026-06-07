@@ -31,34 +31,7 @@ Infrastructure is distributed across two Availability Zones for high availabilit
 
 ## Architecture Diagram
 
-flowchart TD
-    User[Internet Users] --> PublicALB[Public Application Load Balancer]
-
-    PublicALB --> WebASG[Web Tier Auto Scaling Group]
-    WebASG --> InternalALB[Internal Application Load Balancer]
-
-    InternalALB --> AppASG[Application Tier Auto Scaling Group]
-    AppASG --> RDS[(Amazon RDS MySQL Multi-AZ)]
-
-    subgraph VPC[HM Group AWS VPC]
-        subgraph PublicSubnets[Public Subnets]
-            PublicALB
-            WebASG
-            NAT[NAT Gateway]
-        end
-
-        subgraph PrivateAppSubnets[Private Application Subnets]
-            InternalALB
-            AppASG
-        end
-
-        subgraph PrivateDBSubnets[Private Database Subnets]
-            RDS
-        end
-    end
-
-    GitHub[GitHub Actions CI/CD] --> Terraform[Terraform]
-    Terraform --> VPC
+![3-Tier AWS Architecture](./screenshots/architecture-diagram.png)
 
 ---
 
