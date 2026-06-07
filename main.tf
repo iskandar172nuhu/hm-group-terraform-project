@@ -58,3 +58,9 @@ module "rds" {
   db_sg_id              = module.security_groups.db_sg_id
   db_password           = var.db_password
 }
+
+module "iam" {
+  source       = "./modules/iam"
+  project_name = var.project_name
+  environment  = var.environment
+}
