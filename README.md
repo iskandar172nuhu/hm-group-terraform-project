@@ -29,6 +29,38 @@ The solution follows a classic 3-tier architecture:
 
 Infrastructure is distributed across two Availability Zones for high availability and fault tolerance.
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    User[Internet Users] --> PublicALB[Public Application Load Balancer]
+
+    PublicALB --> WebASG[Web Tier Auto Scaling Group]
+    WebASG --> InternalALB[Internal Application Load Balancer]
+
+    InternalALB --> AppASG[Application Tier Auto Scaling Group]
+    AppASG --> RDS[(Amazon RDS MySQL Multi-AZ)]
+
+    subgraph VPC[HM Group AWS VPC]
+        subgraph PublicSubnets[Public Subnets]
+            PublicALB
+            WebASG
+            NAT[NAT Gateway]
+        end
+
+        subgraph PrivateAppSubnets[Private Application Subnets]
+            InternalALB
+            AppASG
+        end
+
+        subgraph PrivateDBSubnets[Private Database Subnets]
+            RDS
+        end
+    end
+
+    GitHub[GitHub Actions CI/CD] --> Terraform[Terraform]
+    Terraform --> VPC
+
 ---
 
 ## Technology Stack
@@ -106,7 +138,7 @@ Infrastructure is distributed across two Availability Zones for high availabilit
 
 ### 9. Multi-AZ RDS Deployment
 
-![RDS Multi-AZ](screenshots/09-aws-console-rds-multiaz.png)
+![RDS Multi-AZ](screenshots/09-aws-console-rds-multiaz-a.png)
 
 ---
 
