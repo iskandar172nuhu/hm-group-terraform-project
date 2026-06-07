@@ -51,3 +51,9 @@ variable "private_db_subnet_cidrs" {
   type        = list(string)
   default     = ["10.0.4.0/24", "10.0.5.0/24"]
 }
+
+variable "db_password" {
+  description = "Database password for RDS"
+  type        = string
+  sensitive   = true
+}

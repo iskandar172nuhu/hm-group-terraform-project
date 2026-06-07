@@ -48,3 +48,13 @@ module "ec2" {
   web_target_group_arn   = module.alb.web_target_group_arn
   app_target_group_arn   = module.alb.app_target_group_arn
 }
+
+module "rds" {
+  source = "./modules/rds"
+
+  project_name          = var.project_name
+  environment           = var.environment
+  private_db_subnet_ids = module.vpc.private_db_subnet_ids
+  db_sg_id              = module.security_groups.db_sg_id
+  db_password           = var.db_password
+}
