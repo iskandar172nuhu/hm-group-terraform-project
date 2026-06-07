@@ -53,3 +53,63 @@ Infrastructure is distributed across two Availability Zones for high availabilit
 * Enforce infrastructure security checks
 * Implement enterprise DevOps practices
 * Demonstrate production-grade AWS architecture
+
+## 📸 Project Screenshots
+
+### 1. GitHub Repository Structure
+
+![GitHub Repository Structure](screenshots/01-github-repo-structure.png)
+
+---
+
+### 2. Terraform Plan Output
+
+![Terraform Plan](screenshots/02-terraform-plan-pr.png)
+
+---
+
+### 3. GitHub Actions CI/CD Pipeline
+
+![GitHub Actions Pipeline](screenshots/03-github-actions-pipeline-a.png)
+
+---
+
+### 4. tfsec Security Scan Results
+
+![tfsec Scan Results](screenshots/04-tfsec-scan-results.png)
+
+---
+
+### 5. Checkov Security Scan Results
+
+![Checkov Scan Results](screenshots/05-checkov-scan-results.png)
+
+---
+
+### 6. Pre-commit Hooks Execution
+
+![Pre-commit Hooks](screenshots/06-pre-commit-hooks-run.png)
+
+---
+
+### 7. AWS VPC Deployment
+
+![AWS VPC](screenshots/07-aws-console-vpc.png)
+
+---
+
+### 8. EC2 Auto Scaling Groups
+
+![EC2 ASG](screenshots/08-aws-console-ec2-asg.png)
+
+---
+
+### 9. Multi-AZ RDS Deployment
+
+![RDS Multi-AZ](screenshots/09-aws-console-rds-multiaz.png)
+
+---
+
+### 10. Application Load Balancers
+
+![Application Load Balancers](screenshots/10-aws-console-alb.png)
