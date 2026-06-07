@@ -31,7 +31,6 @@ Infrastructure is distributed across two Availability Zones for high availabilit
 
 ## Architecture Diagram
 
-```mermaid
 flowchart TD
     User[Internet Users] --> PublicALB[Public Application Load Balancer]
 
