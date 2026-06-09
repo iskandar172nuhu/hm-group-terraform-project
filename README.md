@@ -27,7 +27,7 @@ The solution follows a classic 3-tier architecture:
 * Application Tier (Private Subnets)
 * Database Tier (Private DB Subnets)
 
-Infrastructure is distributed across two Availability Zones for high availability and fault tolerance.
+Infrastructure is distributed across two Availability Zones for high availability and also fault tolerance.
 
 ## Architecture Diagram
 
